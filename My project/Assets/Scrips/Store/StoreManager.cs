@@ -6,19 +6,21 @@ using UnityEngine.UI;
 
 public class StoreManager : MonoBehaviour
 {
-    public int [,] shopItems = new int [3,3];
+    public int [,] shopItems = new int [4,4];
     public float coins;
-    public Text coinsText;
-    public Text damageText;
+    [HideInInspector] public Text coinsText;
+    [HideInInspector] public Text damageText;
+
+    [SerializeField] Player player;
 
     private void Start()
     {
-        coinsText.text = "Skill points:" + coins.ToString();
+        //coinsText.text = "Coins" + coins.ToString();
 
         //ID
         shopItems[1, 1] = 1;
-        shopItems[1, 1] = 2;
-        shopItems[1, 1] = 3;
+        shopItems[1, 2] = 2;
+        shopItems[1, 3] = 3;
 
         //Price
         shopItems[2, 1] = 10;
@@ -35,9 +37,9 @@ public class StoreManager : MonoBehaviour
     {
         GameObject ButtonRef = GameObject.FindGameObjectWithTag("Event").GetComponent<EventSystem>().currentSelectedGameObject;
 
-        if (coins >= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().ItemID])
+        if (player._coin >= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().ItemID])
         {
-            coins-= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().ItemID];
+            player._coin -= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().ItemID];
             shopItems[3, ButtonRef.GetComponent<ButtonInfo>().ItemID]+=10;
             coinsText.text= "Coins:" + coins.ToString();
             ButtonRef.GetComponent<ButtonInfo>().damageText.text = shopItems[3, ButtonRef.GetComponent<ButtonInfo>().ItemID].ToString();

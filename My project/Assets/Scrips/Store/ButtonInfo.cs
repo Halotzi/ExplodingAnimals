@@ -10,9 +10,9 @@ public class ButtonInfo : MonoBehaviour
     public Text damageText;
     public GameObject ShopManager;
 
-    private void Start()
+    private void Update()
     {
-        priceText.text = "Price: $" + ShopManager.GetComponent<StoreManager>().shopItems[2, ItemID].ToString();
-        damageText.text = "Price: $" + ShopManager.GetComponent<StoreManager>().shopItems[3, ItemID].ToString();
+        priceText.text = "Price: " + ShopManager.GetComponent<StoreManager>().shopItems[2, ItemID].ToString();
+        damageText.text = "Damage" + ShopManager.GetComponent<StoreManager>().shopItems[3, ItemID].ToString();
     }
 }
