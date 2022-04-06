@@ -214,8 +214,76 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1001 &397042254
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3927929395503601528, guid: ad7433d3a42332046a30a27bebeba9ea, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3927929395503601528, guid: ad7433d3a42332046a30a27bebeba9ea, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.38009417
+      objectReference: {fileID: 0}
+    - target: {fileID: 3927929395503601528, guid: ad7433d3a42332046a30a27bebeba9ea, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.39720514
+      objectReference: {fileID: 0}
+    - target: {fileID: 3927929395503601528, guid: ad7433d3a42332046a30a27bebeba9ea, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.608047
+      objectReference: {fileID: 0}
+    - target: {fileID: 3927929395503601528, guid: ad7433d3a42332046a30a27bebeba9ea, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3927929395503601528, guid: ad7433d3a42332046a30a27bebeba9ea, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3927929395503601528, guid: ad7433d3a42332046a30a27bebeba9ea, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3927929395503601528, guid: ad7433d3a42332046a30a27bebeba9ea, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3927929395503601528, guid: ad7433d3a42332046a30a27bebeba9ea, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3927929395503601528, guid: ad7433d3a42332046a30a27bebeba9ea, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3927929395503601528, guid: ad7433d3a42332046a30a27bebeba9ea, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9051353332695066515, guid: ad7433d3a42332046a30a27bebeba9ea, type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ad7433d3a42332046a30a27bebeba9ea, type: 3}
+--- !u!114 &397042255 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8837757137009254258, guid: ad7433d3a42332046a30a27bebeba9ea, type: 3}
+  m_PrefabInstance: {fileID: 397042254}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50b2404e8e61c144f8a1aba5033ece19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1929455009
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,7 +365,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &6780675905803063678
 PrefabInstance:
@@ -306,6 +374,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3391986216702845620, guid: 5812946cca113604e955794d1b8d06f2, type: 3}
+      propertyPath: OnEnemyDestroy.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3391986216702845620, guid: 5812946cca113604e955794d1b8d06f2, type: 3}
+      propertyPath: OnEnemyDestroy.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3391986216702845620, guid: 5812946cca113604e955794d1b8d06f2, type: 3}
+      propertyPath: OnEnemyDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 397042255}
+    - target: {fileID: 3391986216702845620, guid: 5812946cca113604e955794d1b8d06f2, type: 3}
+      propertyPath: OnEnemyDestroy.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 397042255}
+    - target: {fileID: 3391986216702845620, guid: 5812946cca113604e955794d1b8d06f2, type: 3}
+      propertyPath: OnEnemyDestroy.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3391986216702845620, guid: 5812946cca113604e955794d1b8d06f2, type: 3}
+      propertyPath: OnEnemyDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AddScore
+      objectReference: {fileID: 0}
+    - target: {fileID: 3391986216702845620, guid: 5812946cca113604e955794d1b8d06f2, type: 3}
+      propertyPath: OnEnemyDestroy.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: AddCoin
+      objectReference: {fileID: 0}
+    - target: {fileID: 3391986216702845620, guid: 5812946cca113604e955794d1b8d06f2, type: 3}
+      propertyPath: OnEnemyDestroy.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Player, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3391986216702845620, guid: 5812946cca113604e955794d1b8d06f2, type: 3}
+      propertyPath: OnEnemyDestroy.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3391986216702845620, guid: 5812946cca113604e955794d1b8d06f2, type: 3}
+      propertyPath: OnEnemyDestroy.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6780675906854522886, guid: 5812946cca113604e955794d1b8d06f2, type: 3}
       propertyPath: m_RootOrder
       value: 2

@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private int _score = 0;
+    public int _score = 0;
+    public int _coin = 0;
 
     public void AddScore(int addNum)
     {
         _score += addNum;
+    }
+    
+    public void AddCoin(int addNum)
+    {
+        _coin += addNum;
     }
 }
