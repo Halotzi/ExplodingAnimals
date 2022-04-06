@@ -1,18 +1,42 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
-public class EnemyDamage : MonoBehaviour
+namespace Scrips
 {
-    [SerializeField] private int _health = 10;
-    private void OnMouseDown()
+    public class EnemyDamage : MonoBehaviour
     {
-        _health--;
+        public UnityEvent OnEnemyDestroy;
 
-        if (_health <= 0)
+
+        [SerializeField] private MeshRenderer _meshRenderer;
+        [SerializeField] private int _maxHealth = 10;
+        private int _health;
+
+        private void Start()
         {
-            Destroy(this.gameObject);
+            _health = _maxHealth;
+        }
+
+        private void OnMouseDown()
+        {
+            _health--;
+            if (_health <= 0)
+            {
+                ChangeColor();
+                _health = _maxHealth;
+                
+            }
+        }
+
+        private void ChangeColor()
+        {
+            float r = Random.Range(0.0f, 1.0f);
+            float g = Random.Range(0.0f, 1.0f);
+            float b = Random.Range(0.0f, 1.0f);
+            _meshRenderer.material.color = new Color(r,g,b, 1);
+            Debug.Log(r + "" + g + "" + b);
         }
     }
 }
