@@ -10,24 +10,33 @@ namespace Scrips
         public UnityEvent OnEnemyDestroy;
 
 
-        [SerializeField] private MeshRenderer _meshRenderer;
+        [SerializeField] private SkinnedMeshRenderer _meshRenderer;
         [SerializeField] private int _maxHealth = 10;
+        Animator Anim;
+
+        public AudioSource Ouch;
         private int _health;
 
         private void Start()
         {
+            Anim = GetComponent<Animator>();
             _health = _maxHealth;
         }
-
-        private void OnMouseDown()
+        private void Update()
         {
-            _health-=Player.instance.danage;
-            if (_health <= 0)
+            if (Input.GetMouseButtonDown(0))
             {
-                ChangeColor();
-                _health = _maxHealth;
-                OnEnemyDestroy.Invoke();
-                
+                _health -= Player.instance.danage;
+                Anim.SetTrigger("Hit");
+                Ouch.Play();
+                if (_health <= 0)
+                {
+                    ChangeColor();
+                    _maxHealth += 2;
+                    _health = _maxHealth;
+                    OnEnemyDestroy.Invoke();
+
+                }
             }
         }
 

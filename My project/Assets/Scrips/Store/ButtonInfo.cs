@@ -14,6 +14,7 @@ public class ButtonInfo : MonoBehaviour
     {
         priceText.text = "Price: " + ShopManager.GetComponent<StoreManager>().shopItems[2, ItemID].ToString();
         damageText.text = "Damage" + ShopManager.GetComponent<StoreManager>().shopItems[3, ItemID].ToString();
+        ShopManager.GetComponent<StoreManager>().coinsText.text = "Coins:" + Player.instance._coin.ToString();
     }
     public void Buy()
     {
@@ -21,7 +22,6 @@ public class ButtonInfo : MonoBehaviour
         {
             Player.instance._coin -= ShopManager.GetComponent<StoreManager>().shopItems[2, ItemID];
             Player.instance.danage += ShopManager.GetComponent<StoreManager>().shopItems[3, ItemID];
-            ShopManager.GetComponent<StoreManager>().coinsText.text = "Coins:" + Player.instance._coin.ToString();
             ShopManager.GetComponent<StoreManager>().shopItems[2, ItemID] += 10;
             ShopManager.GetComponent<StoreManager>().shopItems[3, ItemID] += 10;
         }
