@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public static Player instance;
     public int _score = 0;
     public int _coin = 0;
+    public int danage = 1;
+
+    public void Awake()
+    {
+        instance = this;
+    }
 
     public void AddScore(int addNum)
     {

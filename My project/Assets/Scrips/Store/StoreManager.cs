@@ -8,10 +8,12 @@ public class StoreManager : MonoBehaviour
 {
     public int [,] shopItems = new int [4,4];
     public float coins;
-    [HideInInspector] public Text coinsText;
-    [HideInInspector] public Text damageText;
+    public Text coinsText;
+    public Text damageText;
 
     [SerializeField] Player player;
+
+    [SerializeField] List<Button> buttons;
 
     private void Start()
     {
@@ -31,18 +33,30 @@ public class StoreManager : MonoBehaviour
         shopItems[3, 1] = 10;
         shopItems[3, 2] = 10;
         shopItems[3, 3] = 10;
+
+        SetButtons();
     }
-    public void Buy()
-
+    void SetButtons()
     {
-        GameObject ButtonRef = GameObject.FindGameObjectWithTag("Event").GetComponent<EventSystem>().currentSelectedGameObject;
-
-        if (player._coin >= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().ItemID])
+        foreach(Button b in buttons)
         {
-            player._coin -= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().ItemID];
-            shopItems[3, ButtonRef.GetComponent<ButtonInfo>().ItemID]+=10;
-            coinsText.text= "Coins:" + coins.ToString();
-            ButtonRef.GetComponent<ButtonInfo>().damageText.text = shopItems[3, ButtonRef.GetComponent<ButtonInfo>().ItemID].ToString();
+            b.onClick.AddListener(b.GetComponent<ButtonInfo>().Buy);
         }
     }
+    
+    /*
+    public void Buy()
+    {
+        GameObject ButtonRef = GameObject.FindGameObjectWithTag("Event").GetComponent<EventSystem>().currentSelectedGameObject; // trying to what?
+
+        if (player._coin >= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().ItemID]) // checking if the player has more money than the Button Item ID
+        {
+            player._coin -= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().ItemID]; // removing the movey from the player
+            shopItems[3, ButtonRef.GetComponent<ButtonInfo>().ItemID]+=10; // Making Damage in Shop Higher
+            coinsText.text= "Coins:" + coins.ToString(); // Setting Coins Amount
+            ButtonRef.GetComponent<ButtonInfo>().damageText.text = shopItems[3, ButtonRef.GetComponent<ButtonInfo>().ItemID].ToString(); // Making Damage in Shop Higher
+        }
+    }
+    */
+
 }

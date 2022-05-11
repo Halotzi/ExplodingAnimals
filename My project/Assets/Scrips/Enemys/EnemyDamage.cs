@@ -21,11 +21,12 @@ namespace Scrips
 
         private void OnMouseDown()
         {
-            _health--;
+            _health-=Player.instance.danage;
             if (_health <= 0)
             {
                 ChangeColor();
                 _health = _maxHealth;
+                OnEnemyDestroy.Invoke();
                 
             }
         }
